@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+    font-family: Arial;
+}
+
+#random{
+    border: 3px outset black;
+    padding: 20px;
+    display: inline-block;
+}

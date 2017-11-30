@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Random Password</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("input[type='submit']").click(function() { 
+                    $.get("/generate", function(response){
+                        $("#random").html(response.word);
+                        $("#num").html(response.number);
+                    });
+                    return false; 
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Random Passcode (passcode #<span id="num">@ViewBag.number</span>)</p>
+        <h2 id="random">@ViewBag.word</h2><br/>
+        <input type="submit" value="Generate">
+    </body>
+</html>
